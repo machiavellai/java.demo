@@ -1,33 +1,28 @@
+import  java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
+     //common issues
+        Scanner scanner = new Scanner(System.in);
 
-        int year = 2025 ;
-        int age = 34;
+        System.out.print("Enter your AGe: ");
+        int age = scanner.nextInt();
+        scanner.nextLine();
 
-        double gap = 22.0;
-        double GPA = 2.9;
-        double price = 11000.99;
+        System.out.print("Enter your Favorite color ");
+        String color = scanner.nextLine();
 
-        //when using char, it's a single object like a grade or symbol
-        char grade = 'A';
-        char symbol = '!';
-        char Currency = '$';
+        System.out.println("Enter your Favorite car ");
+        String car = scanner.nextLine();
 
-        boolean forSale = true;
-        boolean isOnline = true;
-        String name = "victor Oghene";
-        System.out.println(" Hello " + name);
-        String food = "pizza";
-        System.out.println("Your Favourite Food is: " + food);
+        System.out.println( "you are "+ age + " Years old");
+        System.out.println("you like the color " + color);
+        System.out.println("you like the car " + car);
 
-        String email = "fake123@gmail.comn";
-        String car = "Avalon";
-        String color  = "Orange";
 
-        System.out.println(" your choice of car is a " + " " + color + " " +  year +" " + car);
-        System.out.println("The Price is: "+ price );
+        scanner.close();
+        //it is good to close your scanner at the end of your application
     }
 }
