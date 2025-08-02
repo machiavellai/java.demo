@@ -4,26 +4,35 @@ import  java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-     //application of scanner to calculate area of rectangle
+     //MAD LIBS GAME
+        //scanner will help us accept user inputs
+        Scanner scanner = new Scanner(System.in);
 
-        double width = 0;
-        double height = 0;
-        double area = 0;
+        String Adjective;
+        String noun1;
+        String Adjective2;
+        String verb;
+        String Adjective3;
 
-        Scanner scanner = new Scanner((System.in));
+        System.out.print("Enter An adjective (description):");
+        Adjective = scanner.nextLine();
+        System.out.print("Enter a Noun (animal or person): ");
+        noun1 = scanner.nextLine();
+        System.out.print("Enter An adjective (description): ");
+        Adjective2 = scanner.nextLine();
+        System.out.print("Enter a verb end with -ing(action: )");
+        verb = scanner.nextLine();
+        System.out.print("Enter An adjective (description): ");
+        Adjective3 = scanner.nextLine();
 
-        System.out.print("Enter the Width: ");
-        width = scanner.nextDouble();
 
-        System.out.print("Enter the Height: ");
-        height = scanner.nextDouble();
+        System.out.println("\nToday i went to a "+ Adjective + " zoo" );
+        System.out.println("In an exhibit, i saw a " + noun1 + ".");
 
-        area = width * height;
+        System.out.println(noun1 +"was" + Adjective2 + " and " + verb + "!");
+        System.out.println("I was " + Adjective3 + "!");
 
-        System.out.println("the Area is: " + area + " cm");
 
-        //ensure to always close the scanner object
-        scanner.close();
-
+scanner.close();
     }
 }
