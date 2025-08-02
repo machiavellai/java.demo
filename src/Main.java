@@ -3,26 +3,36 @@ import  java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+       //A Shopping Programme
+        //we will use a scanner for input for what users want!
 
-     //common issues
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner((System.in));
 
-        System.out.print("Enter your AGe: ");
-        int age = scanner.nextInt();
-        scanner.nextLine();
+        String item ;
+        double price;
+        int quantity;
+        char currency = '$';
+        double total ;
 
-        System.out.print("Enter your Favorite color ");
-        String color = scanner.nextLine();
+        System.out.print("what Item would you like to buy : ");
+        item = scanner.nextLine();
 
-        System.out.println("Enter your Favorite car ");
-        String car = scanner.nextLine();
+        System.out.print("What is the price of each  : ");
+        price = scanner.nextDouble();
 
-        System.out.println( "you are "+ age + " Years old");
-        System.out.println("you like the color " + color);
-        System.out.println("you like the car " + car);
+        System.out.print("How many woukd you like? : ");
+        quantity = scanner.nextInt();
+
+        total = price * quantity;
+
+        System.out.println("\nCustomer your total amount for "+ quantity + " "+ item+ " is : " +total);
+        System.out.println( "Your total amount = " + total + " " + currency
+        );
+//        System.out.println(price
+//        );
+
 
 
         scanner.close();
-        //it is good to close your scanner at the end of your application
     }
 }
