@@ -4,7 +4,26 @@ import  java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-     //to close your scanner at the end of your application
-        //application of scanner to calaculate area of rectangle
+     //application of scanner to calculate area of rectangle
+
+        double width = 0;
+        double height = 0;
+        double area = 0;
+
+        Scanner scanner = new Scanner((System.in));
+
+        System.out.print("Enter the Width: ");
+        width = scanner.nextDouble();
+
+        System.out.print("Enter the Height: ");
+        height = scanner.nextDouble();
+
+        area = width * height;
+
+        System.out.println("the Area is: " + area + " cm");
+
+        //ensure to always close the scanner object
+        scanner.close();
+
     }
 }
