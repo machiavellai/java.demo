@@ -3,11 +3,8 @@
 public class Main {
     public static void main(String[] args) {
 
-//  declaraing a variable
-        double age = 23.0;
 
         int year = 2025 ;
-        int quantity = 1;
 
         System.out.println(" The year is " + year);
     }
