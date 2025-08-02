@@ -3,20 +3,12 @@
 public class Main {
     public static void main(String[] args) {
 
-        /*
-        *this is
-        * a
-        * multi
-        * line
-        *
-        * */
-        System.out.println("i am victor Nigga!");
+//  declaraing a variable
+        double age = 23.0;
 
-//        for (int i = 1; i <= 5; i++) {
-//            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-//            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-//            System.out.println("i = " + i);
-//        }
+        int year = 2025 ;
+        int quantity = 1;
 
+        System.out.println(" The year is " + year);
     }
 }
