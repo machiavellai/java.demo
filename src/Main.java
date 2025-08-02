@@ -4,14 +4,13 @@ import  java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-    //Arithmetic Operators
-        //Augmented Assignment Operators
+   //incrememt and decrement operators
         int x = 10;
-        int y = 4;
-        int z;
-
-        x %= y;
-
+int y =9;
+        x--;
+y++;
         System.out.println(x);
+        System.out.println(y);
+
     }
 }
