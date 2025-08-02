@@ -5,7 +5,8 @@ public class Main {
 
 
         int year = 2025 ;
+        int age = 34;
 
-        System.out.println(" The year is " + year);
+        System.out.println(" The year is " + year + " " + age);
     }
 }
