@@ -1,36 +1,25 @@
-import java.util.Random;
-//importing random class
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-       //working and genrating Random numbers
+//        System.out.println(Math.PI);
 
-        //initializing the random object
-        Random random = new Random();
+        double result2;
+        double result;
+        double result3;
+        double roundDown;
 
-        boolean isHeads ;
-        int number1 ;
-        int number2 ;
-        int number3 ;
+        //Math related concepts
+        result = Math.pow(2, 3);
+        result = Math.abs(5);
+        result2 = Math.sqrt(4);
+        result = Math.round(3.14);
+        result = Math.ceil(3.24);
+        roundDown = Math.floor(3.89);
+        result = Math.max(10, 30);
+        result = Math.min(10, 30);
 
-        //setting a bounds for the random number for range
-        // 6 in exclusive and 1 is inclusive( origin && Bound)
-        isHeads = random.nextBoolean();
-
-        if(isHeads){
-            System.out.println("Heads");
-        }else{
-            System.out.println("Tails");
-        }
-        number1 = random.nextInt(1, 7);
-        number2 = random.nextInt(1,8);
-        number3 = random.nextInt(2, 8);
-
-//        System.out.println(isHeads);
-        System.out.println(number1);
-        System.out.println(number2);
-        System.out.println(number3);
+        System.out.println(result);
+        System.out.println(result2);
 
     }
 }
