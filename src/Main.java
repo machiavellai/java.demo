@@ -3,35 +3,55 @@ import  java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-       //A Shopping Programme
-        //we will use a scanner for input for what users want!
+       //if styatement = perform a block of code if the condition is true
 
-        Scanner scanner = new Scanner((System.in));
+        Scanner scanner = new Scanner(System.in);
 
-        String item ;
-        double price;
-        int quantity;
-        char currency = '$';
-        double total ;
+        String name;
+        int age = 40;
+        boolean isStudent;
 
-        System.out.print("what Item would you like to buy : ");
-        item = scanner.nextLine();
+        System.out.print("Enter your name: ");
+        name = scanner.nextLine();
 
-        System.out.print("What is the price of each  : ");
-        price = scanner.nextDouble();
-
-        System.out.print("How many woukd you like? : ");
-        quantity = scanner.nextInt();
-
-        total = price * quantity;
-
-        System.out.println("\nCustomer your total amount for "+ quantity + " "+ item+ " is : " +total);
-        System.out.println( "Your total amount = " + total + " " + currency
-        );
-//        System.out.println(price
-//        );
+        System.out.print(" Enter your AGe: ");
+        age = scanner.nextInt();
 
 
+        System.out.println("Are you a student (true/false): ");
+        isStudent = scanner.nextBoolean();
+
+        //Group1
+        // to check if there's a value for the name
+        //string method to check if tjere's a value for a string or if it's empty
+        if(name.isEmpty()){
+            System.out.println("you didn't enter you name");
+        }
+        else{
+            System.out.println("hello " + name);
+        }
+
+        //group 2
+        if(age >= 70){
+            System.out.println("you are a senior 👴🏽");
+        } else if (age >= 18) {
+            System.out.println("you are an adult🧔🏽‍");
+        } else if (age < 0) {
+            System.out.println("you are not yet born");
+        }
+        else if (age == 0) {
+            System.out.println("you are a baby");
+        } else{
+            System.out.println("you are child sucker!");
+        }
+
+        //Group 3
+        if( isStudent){
+            System.out.println("you are a student");
+        }
+        else{
+            System.out.println("you are not a student");
+        }
 
         scanner.close();
     }
