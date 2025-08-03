@@ -2,39 +2,58 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //printf() = is a method used to format output
 
-      //circumference = 2PI * Radius
-        //area = Math.Pi * Math.pow( Rad, 2);
+        // %[flags][width][.precision][specifier-character]
 
-        Scanner scanner = new Scanner(System.in);
+        String name = "SpongeBob";
+        char firstLetter = 'S';
+        int age = 30;
+        boolean isEmployee = true;
+        double Height = 60.5;
 
-        double radius;
-        double Circumference;
-        double area;
-        double volume;
+        // now working[.precision]
+        double price1 = 90.99;
+        double price2 = 10.14;
+        double price3 = -220.3;
+
+        // now working[.width]
+        int id1 = 99;
+        int id2 = 14;
+        int id3 = 203;
+        int id4 = 2103;
 
 
-        System.out.print("Enter the Radius: ");
-        radius = scanner.nextDouble();
+        System.out.printf("Hello %s\n" , name );
+        System.out.printf("Your Name Starts with a %c\n" ,firstLetter );
+        System.out.printf("Your are %d years old\n" , age );
+        System.out.printf("You are %1f inches tall\n", Height);
+        System.out.printf("Employed:  %b\n", isEmployee);
 
-        //calc Circumference
+        //combining different value of different datatype in the formatted string
+        //setting the precision to the amount of numbers we want shown
+        //output a plus (flags) for positive numbers
 
-        Circumference = 2 * Math.PI * radius;
-        area = Math.PI * Math.pow(radius, 2);
-        volume = (4.0 / 3.0) * Math.PI * Math.pow(radius, 2);
+        // + = couput a plus
+        // , = comma grouping sperators
+        // ( = negative numbers enclosed in ()
+        // space = display a minus if negative, space if positive
+
+        System.out.printf("%s is %d years old \n", name, age);
+        System.out.printf("% .1f \n", price1);
+        System.out.printf("% .2f\n", price2);
+        System.out.printf("% .1f\n", price3);
 
 
-        System.out.println( "the Circumference is :" + Circumference+ "cm");
-        System.out.println( "The Area is :" + area+ "cm²");
-        System.out.println( "The Vlume is :" + volume+ "cm³");
+        //working with width
+        //0 = zero padding then add the amount of digits you want e.g.  printf("%0d\n", id1);
+        // number = right justified padding  e.g printf("%4d\n", id2);
+        // negative number = left justified padding e.g printf("%-4d\n", id1);
 
-        System.out.println(" \nNow working with formatted Strings");
-
-        System.out.printf("the Circumference is: %.1fcm" , Circumference);
-        System.out.printf("\nThe Area is: %.2fcm²" , area);
-        System.out.printf("\nThe Volume is: %.1fcm³" , volume);
-
-        scanner.close();
-
+        System.out.println("Working with the width width formatted strings");
+        System.out.printf("%04d\n", id1);
+        System.out.printf("%04d\n", id2);
+        System.out.printf("%03d\n", id3);
+        System.out.printf("%04d\n", id4);
     }
 }
