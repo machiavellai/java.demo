@@ -1,25 +1,26 @@
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println(Math.PI);
 
-        double result2;
-        double result;
-        double result3;
-        double roundDown;
+        //Hypotenuse C = Math.sqrt(a2 + b2)😂
 
-        //Math related concepts
-        result = Math.pow(2, 3);
-        result = Math.abs(5);
-        result2 = Math.sqrt(4);
-        result = Math.round(3.14);
-        result = Math.ceil(3.24);
-        roundDown = Math.floor(3.89);
-        result = Math.max(10, 30);
-        result = Math.min(10, 30);
 
-        System.out.println(result);
-        System.out.println(result2);
+        Scanner scanner = new Scanner(System.in);
 
+        double a;
+        double b;
+        double c;
+
+        System.out.print("enter the length of the side A: ");
+        a = scanner.nextDouble();
+
+        System.out.print("enter the length of the side B: ");
+        b = scanner.nextDouble();
+
+        c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+
+        System.out.println("the Hypotenuse (side c) is : " + c + "cm");
+        scanner.close();
     }
 }
