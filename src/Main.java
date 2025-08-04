@@ -2,31 +2,27 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //Compound Interest calculator
+
+        //enhanced Switches - A replacement to using if/else statement
+
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the day of the week : ");
+        String Day = scanner.nextLine();
 
-        double principle;//principle amount
-        double rate;
-        int timesCompounded;
-        int years;
-        double amount;
+        //generalizing similar switch cases
+        // enhanced replacement for many if/else statements
+        switch(Day){
+            case  "Monday",
+              "Tuesday" ,
+              "Wednesday" ,
+              "Thursday",
+              "Friday"  -> System.out.println("It is a Weekday🙃");
+            case  "Saturday" -> System.out.println("It is a Weekend🕺🏽");
+            case  "Sunday" -> System.out.println("Let's go praise d day");
+            default -> System.out.println(Day +" is not a day!" );
 
-        System.out.print("enter the principal amount : " );
-        principle = scanner.nextDouble();
 
-        System.out.print(" Enter the interest rate (in %): ");
-        rate = scanner.nextDouble() / 100 ; //for the division of percentile
-
-        System.out.print("Enter the # of times compounded per year: ");
-        timesCompounded = scanner.nextInt();
-
-        System.out.print(" ENter the Amount of years: ");
-        years = scanner.nextInt();
-
-        amount = principle * Math.pow(1 + rate/timesCompounded, timesCompounded * years);
-
-        System.out.printf("The Amount after  %d years is $%,.0f ", years, amount);
-
+        }
         scanner.close();
     }
 }
