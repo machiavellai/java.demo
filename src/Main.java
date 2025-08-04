@@ -3,32 +3,47 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-       //.susbsctring() = A method used to extract a portion of a string
-//        .substring(start, end)
+        //WEIGTH CONVERSION PROGRAMME
+
         Scanner scanner = new Scanner(System.in);
 
-        String email ;
-        String username;
-        String Domain;
+//        DECLARING VARIABLES
+        double weight;
+        double newWeight;
+        int choice;
 
-        System.out.print("Enter your Email: ");
-        email = scanner.nextLine();
+        System.out.println("Weight COnversion Programme");
+        System.out.println("step 1: Convert Lbs to Kg");
+        System.out.println("Step 2: Weight COnversion Programme");
 
-        if(email.contains("@")){
-            //using this to create a substring of the email
-            //we use the indexOf() method to select the strings before hthat highlighted character
-            username = email.substring(0,email.indexOf("@"));
+        System.out.print(" Choose an Option: ");
+        choice = scanner.nextInt();
 
-            //adding the +1 because we want to remove the '@' symbol
-            String domain = email.substring(email.indexOf("@") +1);
+        if(choice == 1){
+            System.out.print("Enter the weitgh in lbs: ");
+            weight = scanner.nextDouble();
 
+            newWeight = weight * 0.453592;
+            System.out.printf("The new Weight in Kgs is: %.1f" , newWeight);
+        }
+        else if(choice == 2){
+            System.out.print("Enter the weitgh in kgs: ");
+            weight = scanner.nextDouble();
 
-            System.out.println(username);
-            System.out.println(domain);
-        }else {
-            System.out.println("Error, Emails must contains! @");
+            newWeight = weight * 2.20462;
+            System.out.printf("The new Weight in lbs is: %.1f" , newWeight);
+        }
+        else{
+            System.out.println("Not a valid Choice");
         }
 
+//        SHOW WELCOME MESSAGE
+
+        //promot for user choice Using scanner
+
+        // covert the lbs to kgs
+
+        //option 2 convert kgs to lbs
         scanner.close();
     }
 }
