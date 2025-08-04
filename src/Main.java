@@ -3,47 +3,39 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //WEIGTH CONVERSION PROGRAMME
+//Temprature converter
+        Scanner scanner = new Scanner (System.in);
 
-        Scanner scanner = new Scanner(System.in);
+        double temp;
+        double newTemp;
+        String unit;
 
-//        DECLARING VARIABLES
-        double weight;
-        double newWeight;
-        int choice;
 
-        System.out.println("Weight COnversion Programme");
-        System.out.println("step 1: Convert Lbs to Kg");
-        System.out.println("Step 2: Weight COnversion Programme");
+        System.out.print(" Enter the Temprature : ");
+        temp = scanner.nextDouble();
 
-        System.out.print(" Choose an Option: ");
-        choice = scanner.nextInt();
+        System.out.print(" Convert to celsius or Fehrenheit? (C or F): ");
+        //using method chaining incase there is a lowercase or uppercase of the UNits we use toupperCase()
+        unit = scanner.next().toUpperCase();
 
-        if(choice == 1){
-            System.out.print("Enter the weitgh in lbs: ");
-            weight = scanner.nextDouble();
+        // (condition) ? true : false
+       newTemp = (unit.equals("C")) ? (temp - 32) * 5 /9 : (temp * 5/9) * 32;
+        System.out.printf("Temprature is : %.1f° %s",newTemp , unit);
 
-            newWeight = weight * 0.453592;
-            System.out.printf("The new Weight in Kgs is: %.1f" , newWeight);
-        }
-        else if(choice == 2){
-            System.out.print("Enter the weitgh in kgs: ");
-            weight = scanner.nextDouble();
 
-            newWeight = weight * 2.20462;
-            System.out.printf("The new Weight in lbs is: %.1f" , newWeight);
-        }
-        else{
-            System.out.println("Not a valid Choice");
-        }
 
-//        SHOW WELCOME MESSAGE
+//       // ternary operator ? = return 1 of 2 values if a condition is true
+//        //variable = (condition) ? ifTrue : ifFalse;
+//
+//        int hours = 9;
+//        int income = 60000;
+//        double taxRate = (income >= 40000) ? 0.25 : 0.15;
+//        String timeOfDay = ( hours < 12) ? "A.M." : "P.M";
+//
+//
+//
+//        System.out.println(taxRate);
 
-        //promot for user choice Using scanner
-
-        // covert the lbs to kgs
-
-        //option 2 convert kgs to lbs
         scanner.close();
     }
 }
