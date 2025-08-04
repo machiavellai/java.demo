@@ -3,39 +3,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-//Temprature converter
-        Scanner scanner = new Scanner (System.in);
+        //enhanced Switches - A replacement to using if/else statement
 
-        double temp;
-        double newTemp;
-        String unit;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the day of the week : ");
+        String Day = scanner.nextLine();
 
-
-        System.out.print(" Enter the Temprature : ");
-        temp = scanner.nextDouble();
-
-        System.out.print(" Convert to celsius or Fehrenheit? (C or F): ");
-        //using method chaining incase there is a lowercase or uppercase of the UNits we use toupperCase()
-        unit = scanner.next().toUpperCase();
-
-        // (condition) ? true : false
-       newTemp = (unit.equals("C")) ? (temp - 32) * 5 /9 : (temp * 5/9) * 32;
-        System.out.printf("Temprature is : %.1f° %s",newTemp , unit);
-
+        //generalizing similar switch cases
+        // enhanced replacement for many if/else statements
+        switch(Day){
+            case  "Monday",
+              "Tuesday" ,
+              "Wednesday" ,
+              "Thursday",
+              "Friday"  -> System.out.println("It is a Weekday🙃");
+            case  "Saturday" -> System.out.println("It is a Weekend🕺🏽");
+            case  "Sunday" -> System.out.println("Let's go praise d day");
+            default -> System.out.println(Day +" is not a day!" );
 
 
-//       // ternary operator ? = return 1 of 2 values if a condition is true
-//        //variable = (condition) ? ifTrue : ifFalse;
-//
-//        int hours = 9;
-//        int income = 60000;
-//        double taxRate = (income >= 40000) ? 0.25 : 0.15;
-//        String timeOfDay = ( hours < 12) ? "A.M." : "P.M";
-//
-//
-//
-//        System.out.println(taxRate);
-
+        }
         scanner.close();
     }
 }
