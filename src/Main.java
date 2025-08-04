@@ -3,29 +3,43 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //mastering the nested if section
-        boolean isStudent = false;
-        boolean isSenior = true;
-        double price = 9.99;
+       String name = "biggie";
 
-        if(isStudent){
-            if(isSenior){
-                System.out.println("You get a senior discount of %20\n");
-                System.out.println("You also get a student account of %10");
-                price *= 0.7;
-            }else{
-                System.out.println("you get a student discount of 10%");
-                price  *= 0.9;
-            }
+//       int length = name.length();
+//       char letter = name.charAt(2);
+//       int index = name.indexOf("r");
+//        int lastIndex = name.lastIndexOf("c");
+
+//        name = name.replace("o", "a");
+//        name = name.trim();
+//        name = name.toUpperCase();
+//        name
+
+
+//        if(name.isEmpty()){
+//            System.out.println("Your Name is EMpty");
+//        }else{
+//            System.out.println("Hello " + name
+//            );
+//        }
+
+        //add equalsIgnoreCase
+        if(name.equalsIgnoreCase("Biggie")){
+            System.out.println("your name contains Biggie");
         }else{
-            if(isSenior){
-                System.out.println("you get a senior discount of 20%");
-                price *= 0.8;
-            }
-            else{
-                price *= 1;
-            }
+            System.out.println("Your name doesn't contain Biggie");
         }
-        System.out.printf("The Price of a ticket is: $%.2f" , price);
+
+//        if(name.contains("Biggie")){
+//            System.out.println("your name contains a space");
+//        }else{
+//            System.out.println("Your name doesn't contain spaces");
+//        }
+
+//        System.out.println(name);
+//        System.out.println(length);
+//        System.out.println(letter);
+//        System.out.println(index);
+//        System.out.println(lastIndex);
     }
 }
