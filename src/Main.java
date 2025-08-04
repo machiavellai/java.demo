@@ -1,38 +1,59 @@
-import  java.util.Scanner;
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-       //A Shopping Programme
-        //we will use a scanner for input for what users want!
+        //printf() = is a method used to format output
 
-        Scanner scanner = new Scanner((System.in));
+        // %[flags][width][.precision][specifier-character]
 
-        String item ;
-        double price;
-        int quantity;
-        char currency = '$';
-        double total ;
+        String name = "SpongeBob";
+        char firstLetter = 'S';
+        int age = 30;
+        boolean isEmployee = true;
+        double Height = 60.5;
 
-        System.out.print("what Item would you like to buy : ");
-        item = scanner.nextLine();
+        // now working[.precision]
+        double price1 = 90.99;
+        double price2 = 10.14;
+        double price3 = -220.3;
 
-        System.out.print("What is the price of each  : ");
-        price = scanner.nextDouble();
-
-        System.out.print("How many woukd you like? : ");
-        quantity = scanner.nextInt();
-
-        total = price * quantity;
-
-        System.out.println("\nCustomer your total amount for "+ quantity + " "+ item+ " is : " +total);
-        System.out.println( "Your total amount = " + total + " " + currency
-        );
-//        System.out.println(price
-//        );
+        // now working[.width]
+        int id1 = 99;
+        int id2 = 14;
+        int id3 = 203;
+        int id4 = 2103;
 
 
+        System.out.printf("Hello %s\n" , name );
+        System.out.printf("Your Name Starts with a %c\n" ,firstLetter );
+        System.out.printf("Your are %d years old\n" , age );
+        System.out.printf("You are %1f inches tall\n", Height);
+        System.out.printf("Employed:  %b\n", isEmployee);
 
-        scanner.close();
+        //combining different value of different datatype in the formatted string
+        //setting the precision to the amount of numbers we want shown
+        //output a plus (flags) for positive numbers
+
+        // + = couput a plus
+        // , = comma grouping sperators
+        // ( = negative numbers enclosed in ()
+        // space = display a minus if negative, space if positive
+
+        System.out.printf("%s is %d years old \n", name, age);
+        System.out.printf("% .1f \n", price1);
+        System.out.printf("% .2f\n", price2);
+        System.out.printf("% .1f\n", price3);
+
+
+        //working with width
+        //0 = zero padding then add the amount of digits you want e.g.  printf("%0d\n", id1);
+        // number = right justified padding  e.g printf("%4d\n", id2);
+        // negative number = left justified padding e.g printf("%-4d\n", id1);
+
+        System.out.println("Working with the width width formatted strings");
+        System.out.printf("%04d\n", id1);
+        System.out.printf("%04d\n", id2);
+        System.out.printf("%03d\n", id3);
+        System.out.printf("%04d\n", id4);
     }
 }
