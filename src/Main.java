@@ -3,23 +3,25 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-       // && Logical operator AND
-        // || = OR
-        // ! = NOT
+      Scanner scanner = new Scanner(System.in);
+
+      //username must be btw 4-12 characters
+        //username must not contain spaces or underscores
 
 
+        String username;
 
-        double temp = -7;
-        boolean isSunny = false;
+        System.out.print("Enter your username: ");
+        username = scanner.nextLine();
 
-        if(temp <= 30 && temp >= 0 && isSunny){
-            System.out.println("the weather is Good Today!🕺🏽");
-            System.out.println("It's Sunny outside");
-        } else if (temp <= 30 && temp >= 0 && !isSunny) {
-            System.out.println("the weather is Good Today!🕺🏽");
-            System.out.println("It's Cloudy outside");
-        } else if (temp > 30 || temp <0) {
-            System.out.println("The weather is really harsh");
+        if(username.length() < 4 || username.length() >12){
+            System.out.println("Username must be between 4 - 12 characters");
+        } else if(username.contains(" ") || username.contains("_")) {
+            System.out.println("Username must not contain Spaces or UnderScores");
+        }
+
+        else {
+            System.out.println("Welcome : " + username);
         }
     }
 }
