@@ -1,33 +1,42 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner((System.in));
+        //Number Guessding Game
 
-      int number = 0;
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
 
-      do{
-          System.out.print("enter a umber betwee 1-10: ");
-          number = scanner.nextInt();
+        // guess
+        int guess;
+        int attempts =0;
+        int min = 1;
+        int max = 100;
+        int randomNumber = random.nextInt(min, max + 1);
 
-      }while  (number < 1 || number > 11);
-        System.out.println(" You picked " + number);
-//        //using while loop to make sure no one uses a negative value
-//        while(age < 0){
-//            System.out.println("Your Age can't be negative");
-//            System.out.print("Enter your age: ");
-//            age = scanner.nextInt();
-//        }
-//
-//        //now working with do-while loops
-//        do {
-//            System.out.println("Your Age can't be negative");
-//            System.out.print("Enter your age: ");
-//            age = scanner.nextInt();
-//        }while(age < 0);
+        System.out.println("<<<<<<<<<< Number Guessing Game >>>>>>>>>>>>>");
+        System.out.printf("Guess a number between %d - %d: \n", min, max);
 
-        //when the age meet the requirements we then accept the input
-//        System.out.println("Your are " + age + " Years old");
+        do {
+        //do the condition here...keep playing
+            System.out.print("Enter A Guess: ");
+            guess = scanner.nextInt();
+            attempts++;
+
+            //check to see if the guess is less than the random number and various conditions
+            if (guess < randomNumber){
+                System.out.println("Too low Try AGain");
+            }
+            else if (guess > randomNumber){
+                System.out.println("Too High Try AGain");
+            }
+            else {
+                System.out.println("You Won 🥇");
+                System.out.println("Correct the number was : " + randomNumber);
+                System.out.println("Number of Attempts " + attempts);
+            }
+        }while (guess != randomNumber); //while the guess doesn't equal to our random guess
 
         scanner.close();
     }
