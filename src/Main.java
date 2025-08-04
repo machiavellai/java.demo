@@ -1,28 +1,48 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
-        //enhanced Switches - A replacement to using if/else statement
+       //Using nested loops to work with arrays
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the day of the week : ");
-        String Day = scanner.nextLine();
 
-        //generalizing similar switch cases
-        // enhanced replacement for many if/else statements
-        switch(Day){
-            case  "Monday",
-              "Tuesday" ,
-              "Wednesday" ,
-              "Thursday",
-              "Friday"  -> System.out.println("It is a Weekday🙃");
-            case  "Saturday" -> System.out.println("It is a Weekend🕺🏽");
-            case  "Sunday" -> System.out.println("Let's go praise d day");
-            default -> System.out.println(Day +" is not a day!" );
+        int rows;
+        int columns;
+        char symbols;
 
+        System.out.print("ENter the number of Rows: " );
+        rows = scanner.nextInt();
+
+        System.out.print("Enter the number of Columns: " );
+        columns = scanner.nextInt();
+
+        System.out.print("Enter the symbok to use: ");
+        symbols = scanner.next().charAt(0);
+
+        //setting up the matrices
+        //starting with columns
+        //outer loop for
+        for (int j =0; j < rows; j++){
+            for (int i = 0; i < columns; i++){
+                System.out.print(symbols);
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+//        //nested loop = A loop inside another loop
+//        //              often used with Matrices or DS&A
+//
+//        //if you have a loop inside another loop give different variable name
+//        for( int i = 1; i <=9; i++){
+//            for( int j = 1; j <=9; j++){
+//                System.out.print(j + " ");
+//            }
+//            System.out.println();
+//        }
+//
 
         }
-        scanner.close();
     }
-}
