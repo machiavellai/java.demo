@@ -3,43 +3,32 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-       String name = "biggie";
+       //.susbsctring() = A method used to extract a portion of a string
+//        .substring(start, end)
+        Scanner scanner = new Scanner(System.in);
 
-//       int length = name.length();
-//       char letter = name.charAt(2);
-//       int index = name.indexOf("r");
-//        int lastIndex = name.lastIndexOf("c");
+        String email ;
+        String username;
+        String Domain;
 
-//        name = name.replace("o", "a");
-//        name = name.trim();
-//        name = name.toUpperCase();
-//        name
+        System.out.print("Enter your Email: ");
+        email = scanner.nextLine();
+
+        if(email.contains("@")){
+            //using this to create a substring of the email
+            //we use the indexOf() method to select the strings before hthat highlighted character
+            username = email.substring(0,email.indexOf("@"));
+
+            //adding the +1 because we want to remove the '@' symbol
+            String domain = email.substring(email.indexOf("@") +1);
 
 
-//        if(name.isEmpty()){
-//            System.out.println("Your Name is EMpty");
-//        }else{
-//            System.out.println("Hello " + name
-//            );
-//        }
-
-        //add equalsIgnoreCase
-        if(name.equalsIgnoreCase("Biggie")){
-            System.out.println("your name contains Biggie");
-        }else{
-            System.out.println("Your name doesn't contain Biggie");
+            System.out.println(username);
+            System.out.println(domain);
+        }else {
+            System.out.println("Error, Emails must contains! @");
         }
 
-//        if(name.contains("Biggie")){
-//            System.out.println("your name contains a space");
-//        }else{
-//            System.out.println("Your name doesn't contain spaces");
-//        }
-
-//        System.out.println(name);
-//        System.out.println(length);
-//        System.out.println(letter);
-//        System.out.println(index);
-//        System.out.println(lastIndex);
+        scanner.close();
     }
 }
