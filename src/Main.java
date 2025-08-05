@@ -3,46 +3,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)  {
+        //overloaded methods = methods that share
+        // the same name but different parameters
+        //      signature = name + parameters
 
-       //Using nested loops to work with arrays
+        System.out.println(add(3, 6));
+        System.out.println(add(3, 6, 4));
 
-        Scanner scanner = new Scanner(System.in);
 
-        int rows;
-        int columns;
-        char symbols;
-
-        System.out.print("ENter the number of Rows: " );
-        rows = scanner.nextInt();
-
-        System.out.print("Enter the number of Columns: " );
-        columns = scanner.nextInt();
-
-        System.out.print("Enter the symbok to use: ");
-        symbols = scanner.next().charAt(0);
-
-        //setting up the matrices
-        //starting with columns
-        //outer loop for
-        for (int j =0; j < rows; j++){
-            for (int i = 0; i < columns; i++){
-                System.out.print(symbols);
-            }
-            System.out.println();
-        }
-
-        scanner.close();
-//        //nested loop = A loop inside another loop
-//        //              often used with Matrices or DS&A
-//
-//        //if you have a loop inside another loop give different variable name
-//        for( int i = 1; i <=9; i++){
-//            for( int j = 1; j <=9; j++){
-//                System.out.print(j + " ");
-//            }
-//            System.out.println();
-//        }
-//
-
-        }
     }
+    static double add (double a, double b){
+        return  a + b;
+    }
+    //the same method name but different parameters
+    //no two methods can share two signatures
+    static double add (double a, double b, double c){
+        return  a + b + c;
+    }
+}
