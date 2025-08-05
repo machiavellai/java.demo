@@ -6,32 +6,36 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        // working with ARRAY
+        Scanner scanner = new Scanner(System.in);
 
-        String[] fruits = {"apple", "orange", "coconut", "tuyyu"};
+        //when we initialize an empty array
+        //        String[] foods ={};
 
-//        fruits[1] = "pineapple";
-       // int numOfFruits = fruits.length;
+        //allocate space for the array
+        String[] foods;
+        int size;
 
-        //using for loop to list through the list of array
-//        for (int i = 0; i < fruits.length; i++) {
-//            //printing each elemts of the array with index
-//            System.out.print(fruits[i] + " ");
-//        }
+        //the user will set the size
+        System.out.print("what number of food do you want: ");
+        size = scanner.nextInt();
+        scanner.nextLine();
 
+        //and the size will be passed down here
+        foods = new String[size];
 
-        //sorting your arrays
-//        Arrays.sort(fruits);
-
-        //fill method with Arrays
-        Arrays.fill(fruits, "pineapple");
-
-        //enhanced for loops/for each loop
-        //where you have to delcare the data types of your items in array
-        for(String fruit : fruits){
-            System.out.println(fruit);
-
+        for (int i = 0; i < foods.length ; i++) {
+            System.out.print("Enter a food: ");
+            foods[i] = scanner.nextLine();
         }
+
+        for (String food : foods){
+            System.out.println(food);
+        }
+//        //if you try to allocate it won't work
+//
+
+//        System.out.println(foods.length);
+        scanner.close();
     }
 
 }
