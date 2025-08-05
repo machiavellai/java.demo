@@ -4,45 +4,39 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)  {
 
-       //Using nested loops to work with arrays
+       double result =  square(3);
+        System.out.println(result);
 
-        Scanner scanner = new Scanner(System.in);
+        //method = a block of resuable code that is executed when called
+//        String name = "Bro";
+//        int age = 25;
+    //one way to solve the issue is passing arguments
+//        happyBirthday(name, age );
 
-        int rows;
-        int columns;
-        char symbols;
-
-        System.out.print("ENter the number of Rows: " );
-        rows = scanner.nextInt();
-
-        System.out.print("Enter the number of Columns: " );
-        columns = scanner.nextInt();
-
-        System.out.print("Enter the symbok to use: ");
-        symbols = scanner.next().charAt(0);
-
-        //setting up the matrices
-        //starting with columns
-        //outer loop for
-        for (int j =0; j < rows; j++){
-            for (int i = 0; i < columns; i++){
-                System.out.print(symbols);
-            }
-            System.out.println();
-        }
-
-        scanner.close();
-//        //nested loop = A loop inside another loop
-//        //              often used with Matrices or DS&A
-//
-//        //if you have a loop inside another loop give different variable name
-//        for( int i = 1; i <=9; i++){
-//            for( int j = 1; j <=9; j++){
-//                System.out.print(j + " ");
-//            }
-//            System.out.println();
-//        }
-//
-
-        }
     }
+    //declaring the method
+    //to do an action
+    // it needs a return type, name for method and parenthesis
+    // adding "static void" because we are in a static class
+
+    static void happyBirthday(String name, int age){
+        System.out.println("happy Birthday to you");
+        //there's an error because methods are not
+        // familiar with methods in another variable
+        //it's like 2 neighbours on the same street
+
+        System.out.printf("happy Birthday Dear %s!\n", name);
+        System.out.printf("you Are %d yars old\n", age );
+        System.out.println("happy Birthday to you\n");
+    }
+    static  double square(double number){
+        return  number * number ;
+    }
+    static double cube (double number ){
+        return number * number * number;
+    }
+    static String getFullName(String first, String last){
+        return first + " " + last;
+    }
+
+}
