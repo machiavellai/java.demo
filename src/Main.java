@@ -7,6 +7,8 @@ public class Main {
     public static void main(String[] args)  {
         // JAVA BANKING PROGRAM FOR BEGINNERS
         Scanner scanner = new Scanner(System.in);
+
+        // DECLARE VAR
         double balance = 0; //in case of.99 in amount
         boolean isRunning = true;
         int choice;
@@ -14,8 +16,8 @@ public class Main {
         //the interactive part of the code
         //i want the programm to run as long as is running= true
         // hence a while loop
-
         while (isRunning){
+            //DISPLAY MENU
             System.out.println("******************");
             System.out.println("BANKING PROGRAMME");
             System.out.println("******************");
@@ -25,46 +27,40 @@ public class Main {
             System.out.println("4. Exit: ");
             System.out.println("******************");
 
+            //USERS PICK A CHOICE
             System.out.println("Enter your choice (1 -4): ");
+            // GET AND PROCESS USERS CHOICE
             choice = scanner.nextInt();
 
             switch (choice){
                 //in case one we will pass the showBalance method ...
                 case  1 -> {
+                    //action
+                    //SHOWBalance()
                    showBalance(balance);
                 }
                 case 2 ->{
+                    //action
+                    //deposit()
                     balance += deposit();
                 }
                 case 3 ->{
+                    //action
+                    //withdraw()
                    balance -= withdraw(balance);
                 }
                 case 4 ->{
+                    //action
                     isRunning = false;
                 }
                 default -> System.out.println("INVALID CHOICE");
             }
         }
+        //EXIT MESSAGE
         System.out.println("******************");
         System.out.println("THANK YOU HAVE A NICE DAY");
 
 
-        //withdraw()
-
-        // DECLARE VAR
-
-        //DISPLAY MENU
-
-        //USERS PICK A CHOICE
-
-        // GET AND PROCESS USERS CHOICE
-
-        //SHOWBalance()
-
-        //deposit()
-
-
-        //EXIT MESSAGE
     }
     static void showBalance(double balance){
         System.out.println("******************");
