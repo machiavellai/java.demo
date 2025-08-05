@@ -4,15 +4,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)  {
 
+        //method is a block of reusable block of code that is executed when called()
+
        double result =  square(3);
         System.out.println(result);
 
-        //method = a block of resuable code that is executed when called
-//        String name = "Bro";
-//        int age = 25;
-    //one way to solve the issue is passing arguments
-//        happyBirthday(name, age );
+        String FUllName = getFullName("Victor", "Oghene");
+        System.out.println(FUllName);
 
+        int age = 10;
+        if (ageCheck(age)){
+            System.out.println("You may Sign up!");
+        }else{
+            System.out.println("You must be 18+ to sign up");
+        }
     }
     //declaring the method
     //to do an action
@@ -38,5 +43,13 @@ public class Main {
     static String getFullName(String first, String last){
         return first + " " + last;
     }
+    static  boolean ageCheck(int age){
+        if (age >= 18){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
 }
