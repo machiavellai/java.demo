@@ -6,36 +6,41 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        Scanner scanner = new Scanner(System.in);
+        //searching through an array
 
-        //when we initialize an empty array
-        //        String[] foods ={};
+        int[] numbers = {1,9,8,5,6,3,2};
+        //we need a target to search for
+        String[] fruits = {"Orange", "apple", "Banana"};
 
-        //allocate space for the array
-        String[] foods;
-        int size;
+        String target2 = "Orange";
+        int target = 8;
 
-        //the user will set the size
-        System.out.print("what number of food do you want: ");
-        size = scanner.nextInt();
-        scanner.nextLine();
+        //initialized a boolean operator for th found or not found case
+        boolean isFound = false;
 
-        //and the size will be passed down here
-        foods = new String[size];
-
-        for (int i = 0; i < foods.length ; i++) {
-            System.out.print("Enter a food: ");
-            foods[i] = scanner.nextLine();
+        //performing a linear search
+        for ( int i = 0 ; i < numbers.length; i++){
+            if (target == numbers[i]){
+                System.out.println("Element found at index : " + i);
+                //we implement break here because
+                // we have found the element so it should stop searching
+                isFound = true;
+                break;
+            }
         }
 
-        for (String food : foods){
-            System.out.println(food);
-        }
-//        //if you try to allocate it won't work
-//
+        //working with search of array with integers
+        for ( int i = 0 ; i < numbers.length; i++){
+            if (fruits[i].equals(target2)){
+                System.out.println("Element found at index : " + i);
+                isFound = true;
+                break;
+            }
 
-//        System.out.println(foods.length);
-        scanner.close();
+        }
+        if (!isFound){
+            System.out.println("Element not Found in the Array");
+        }
     }
 
 }
