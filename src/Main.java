@@ -6,37 +6,27 @@ public class Main {
 
     public static void main(String[] args)  {
 
-       //Var Args == allow methodss to collect a varying
-        // amount of args into a methods which amkes the method felcible,
-        // no need for overloaded methods,
-        // java will pack the args into an array  ...(elipses)
+     // 2D ARRAY = A Array is where each element is an array
+        //useful for storing a matrix of data
 
+        String [] fruits = {"orange", "apple", "watermelon"};
+        String [] protein = {"meat", "chicken", "fish"};
+        String[] vegetables = {"Potatoes", "onion"," carrot"};
 
-        System.out.println( average(1,9,8,6));
+        String [] [] groceries = {fruits, vegetables, protein};
 
+        //replacing items in the multidimensional array
+        groceries[0][0] = "Pineapple";
+        groceries[2][0] = "Avocado";
+        groceries[2][2] = "beetruit";
 
-    }
-//        static int add(int... numbers){
-//           //declare a  local var
-//            int sum = 0;
-//
-//            for (int number : numbers){
-//                sum += number;
-//            }
-//            return sum;
-//
-//        };
-
-    static double average(double... numbers){
-        double sum = 0;
-
-        if(numbers.length == 0){
-            return 0;
+        //we have to use extended for loop because a normal for loop
+        // will return a memory location
+        for (String [] foods : groceries){
+           for(String food : foods){
+               System.out.print(food + " ");
+           }
+            System.out.println();
         }
-
-        for (double number : numbers){
-            sum+= number;
-        }
-        return  sum / numbers.length;
     }
 }
