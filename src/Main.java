@@ -6,44 +6,66 @@ public class Main {
 
     public static void main(String[] args)  {
 
-     // 2D ARRAY = A Array is where each element is an array
-        //useful for storing a matrix of data
+        //Java Quiz Game
+        //Questions?
 
-    char [][] telephone = {{'1', '2', '3'},
-                           {'4', '5', '6'},
-                           {'7', '8', '9'},
-                          {'*', '0', '#'}};
+        String[] questions= {" Whats is the main function of router",
+                             " What is the brain  of your body?",
+                             "Who is the owner of tesla",
+                             "What is the first programming language",
+                             " Father of computer? ",
+                             " Who is obama?"};
 
-    for (char[] row : telephone){
-        for (char number : row){
-        System.out.print(number + " ");
-    }
-    System.out.println();
-}
+        //Options Array
+        String[][] options= {{"1. Storing giles", "2. Encrypting data", "3. directing internet activity"},
+                            {"1. head", "2.brain", "3. leg\n" },
+                            {"1. elon musk", "2. will smith", "3.david beckhan\n"},
+                            {"1. python", "2. C++", "3.Fortran\n"},
+                            {"1. Steve jobbs", "2. Bill Gates", "3.Alan turing\n"},
+                            {"1. former president", "2. that guy", "3. A racist\n"}};
 
+        //Declare Variables
+        int[] answeres = {3, 2, 1, 3, 3,1};
+        int score = 0;
+        int guess;
 
+        Scanner scanner = new Scanner(System.in);
+        //welcome message
 
+        System.out.println("********************************");
+        System.out.println("Welcome to the java Quiz Game! ");
+        System.out.println("********************************\n");
 
+        //Question(loop)
+        for (int i=0; i < questions.length; i++){
+            System.out.println(questions[i]);
 
-//
-//        String [] fruits = {"orange", "apple", "watermelon"};
-//        String [] protein = {"meat", "chicken", "fish"};
-//        String[] vegetables = {"Potatoes", "onion"," carrot"};
-//
-//        String [] [] groceries = {fruits, vegetables, protein};
-//
-//        //replacing items in the multidimensional array
-//        groceries[0][0] = "Pineapple";
-//        groceries[2][0] = "Avocado";
-//        groceries[2][2] = "beetruit";
-//
-//        //we have to use extended for loop because a normal for loop
-//        // will return a memory location
-//        for (String [] foods : groceries){
-//           for(String food : foods){
-//               System.out.print(food + " ");
-//           }
-//            System.out.println();
-//        }
+            //enhanced for loops to loop through the options
+            for (String option : options[i]){
+                System.out.println(option);
+            }
+            //Get guess from User
+            System.out.print("Enter your guess: ");
+            guess = scanner.nextInt();
+
+            if (guess == answeres[i]){
+                System.out.println("***********");
+                System.out.println("CORRECT!");
+                System.out.println("***********");
+                score++;
+            }
+            else {
+                System.out.println("***********");
+                System.out.println("WRONG!");
+                System.out.println("***********");
+            }
+        }
+        //Display final score
+        System.out.println("Your final score is: "+ score + " out of " + questions.length);
+        //Options
+
+        //Check our Guess
+
+scanner.close();
     }
 }
