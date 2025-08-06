@@ -5,67 +5,46 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args)  {
-
-        //Java Quiz Game
-        //Questions?
-
-        String[] questions= {" Whats is the main function of router",
-                             " What is the brain  of your body?",
-                             "Who is the owner of tesla",
-                             "What is the first programming language",
-                             " Father of computer? ",
-                             " Who is obama?"};
-
-        //Options Array
-        String[][] options= {{"1. Storing giles", "2. Encrypting data", "3. directing internet activity"},
-                            {"1. head", "2.brain", "3. leg\n" },
-                            {"1. elon musk", "2. will smith", "3.david beckhan\n"},
-                            {"1. python", "2. C++", "3.Fortran\n"},
-                            {"1. Steve jobbs", "2. Bill Gates", "3.Alan turing\n"},
-                            {"1. former president", "2. that guy", "3. A racist\n"}};
-
-        //Declare Variables
-        int[] answeres = {3, 2, 1, 3, 3,1};
-        int score = 0;
-        int guess;
+       //Rock papaer scissors game
 
         Scanner scanner = new Scanner(System.in);
-        //welcome message
+        Random random = new Random();
 
-        System.out.println("********************************");
-        System.out.println("Welcome to the java Quiz Game! ");
-        System.out.println("********************************\n");
+        String [] choices = {"rock", "paper", "scissors"};
+        String playerChoice;
+        String ComputerChoice;
+        String  playAgain = "yes";
+do {
+    System.out.print("Enter your move (rock, paper, scissors): ");
+    playerChoice = scanner.nextLine().toLowerCase();
 
-        //Question(loop)
-        for (int i=0; i < questions.length; i++){
-            System.out.println(questions[i]);
+    if (!playerChoice.equals("rock")&&
+            !playerChoice.equals("paper") &&
+            !playerChoice.equals("scissors")){
+        System.out.println("Invalid choice");
+        continue;
+    }
 
-            //enhanced for loops to loop through the options
-            for (String option : options[i]){
-                System.out.println(option);
-            }
-            //Get guess from User
-            System.out.print("Enter your guess: ");
-            guess = scanner.nextInt();
+    ComputerChoice = choices[random.nextInt(3)];
+    System.out.println("Computer choice: "+ ComputerChoice);
 
-            if (guess == answeres[i]){
-                System.out.println("***********");
-                System.out.println("CORRECT!");
-                System.out.println("***********");
-                score++;
-            }
-            else {
-                System.out.println("***********");
-                System.out.println("WRONG!");
-                System.out.println("***********");
-            }
-        }
-        //Display final score
-        System.out.println("Your final score is: "+ score + " out of " + questions.length);
-        //Options
+    if (playerChoice.equals(ComputerChoice)){
+        System.out.println("It's a tie");
+    } else if ((playerChoice.equals("rock") && ComputerChoice.equals("scissors")) ||
+            (playerChoice.equals("paper") && ComputerChoice.equals("rock")) ||
+            (playerChoice.equals("scissors") && ComputerChoice.equals("paper"))){
+        System.out.println("You Win!");
+    }  else{
+        System.out.println("you loose!");
+    }
+    //Play Again
+    System.out.print("Play Again Yes/No: ");
+    playAgain = scanner.nextLine().toLowerCase();
 
-        //Check our Guess
+    }while(playAgain.equals("yes"));
 
-scanner.close();
+        System.out.println("Thanks for Playing");
+
+        scanner.close();
     }
 }
