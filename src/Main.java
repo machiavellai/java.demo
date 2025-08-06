@@ -35,7 +35,7 @@ public class Main {
                 break;
             }
         }
-
+//ll
         //working with search of array with integers
         for ( int i = 0 ; i < numbers.length; i++){
             if (fruits[i].equals(target2)){
