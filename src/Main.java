@@ -6,49 +6,37 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        Scanner scanner = new Scanner(System.in);
-        //searching through an array
-
-        int[] numbers = {1,9,8,5,6,3,2};
-        //we need a target to search for
-        String[] fruits = {"Orange", "apple", "Banana"};
-        boolean isFound = false;
-        int target;
-        String target2;
-
-        System.out.print(" Enter a number to search for: ");
-        target = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.print(" Enter a fruit to search for: ");
-        target2 = scanner.nextLine();
-        //initialized a boolean operator for the found or not found case
+       //Var Args == allow methodss to collect a varying
+        // amount of args into a methods which amkes the method felcible,
+        // no need for overloaded methods,
+        // java will pack the args into an array  ...(elipses)
 
 
-        //performing a linear search
-        for ( int i = 0 ; i < numbers.length; i++){
-            if (target == numbers[i]){
-                System.out.println("Number found at index : " + i);
-                //we implement break here because
-                // we have found the element so it should stop searching
-                isFound = true;
-                break;
-            }
-        }
-//ll
-        //working with search of array with integers
-        for ( int i = 0 ; i < numbers.length; i++){
-            if (fruits[i].equals(target2)){
-                System.out.println( target2 + " Fruit found at index : " + i);
-                isFound = true;
-                break;
-            }
+        System.out.println( average(1,9,8,6));
 
-        }
-        if (!isFound){
-            System.out.println("Element not Found in the Array");
-        }
-        scanner.close();
+
     }
+//        static int add(int... numbers){
+//           //declare a  local var
+//            int sum = 0;
+//
+//            for (int number : numbers){
+//                sum += number;
+//            }
+//            return sum;
+//
+//        };
 
+    static double average(double... numbers){
+        double sum = 0;
+
+        if(numbers.length == 0){
+            return 0;
+        }
+
+        for (double number : numbers){
+            sum+= number;
+        }
+        return  sum / numbers.length;
+    }
 }
