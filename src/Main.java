@@ -5,26 +5,24 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args)  {
-            //Creating an Array of Objects
-        Car car1 = new Car("Mustang", "Red");
-        Car car2 = new Car("Corvette", "Blue");
-        Car car3 = new Car("Charger", "Yellow");
+                //Static = makes a variable or method belong to the class
+                // rather than any specific object
+                // commonly used for utility methods or shared resources.
 
-        //anonymous object
-//        Car[] cars = {new Car("Mustang", "Red"),
-//                new Car("Corvette", "Blue"),
-//                new Car("Charger", "yello")};
+        Friend friend1 = new Friend("spongebob");
+        Friend friend2 = new Friend("spongekid");
+        Friend friend3 = new Friend("Squidward");
+        Friend friend4 = new Friend("Krabbs");
+        Friend friend5 = new Friend("Jason");
 
-        //initializing the array object
-//        Car[] cars = new Car[3];
-         Car[] cars = {car1, car2, car3};
-         for( Car car : cars){
-             car.drive();
-         }
-         //using a for loop
-//        for (int i=0; i <cars.length; i++){
-//            cars[i].drive();
-//        }
+        Friend.showFriends();
+        //it will print the numOfFriends to be 1 because each has a refernce
+        // to the friend object
+
+
+        //Now we want to use static keyword so it can keep in memory of the changes
+        // it is better to use the class itself to reference any static method or cariables
+        //for clarity
 
     }
 
