@@ -5,24 +5,27 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args)  {
-                //Static = makes a variable or method belong to the class
-                // rather than any specific object
-                // commonly used for utility methods or shared resources.
+              // Inheritance  = One class inherits the attribute and methods
+                        //  from another class.
+                        // child <- Parent <- GrandParent
+                        // just like a child inherit attributes from the parent
 
-        Friend friend1 = new Friend("spongebob");
-        Friend friend2 = new Friend("spongekid");
-        Friend friend3 = new Friend("Squidward");
-        Friend friend4 = new Friend("Krabbs");
-        Friend friend5 = new Friend("Jason");
+    Dog dog = new Dog();
+    Cat cat = new Cat();
+    Plant plant = new Plant();
 
-        Friend.showFriends();
-        //it will print the numOfFriends to be 1 because each has a refernce
-        // to the friend object
+        //inheritance from parent class and grandparent class
+        System.out.println(dog.isAlive + "Dog is alive");
+        System.out.println(cat.isAlive + "Cat is alive");
 
+        dog.eat();
+        dog.eat();
 
-        //Now we want to use static keyword so it can keep in memory of the changes
-        // it is better to use the class itself to reference any static method or cariables
-        //for clarity
+        dog.speak();
+        cat.speak();
+
+        System.out.println(plant.isAlive);
+        plant.photosynthesis();
 
     }
 
